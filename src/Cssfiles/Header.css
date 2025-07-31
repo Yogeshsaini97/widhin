@@ -1,0 +1,165 @@
+/* Header.css */
+body {
+  font-family: 'Kanit', sans-serif;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.logo small {
+  display: block;
+  font-size: 0.7rem;
+  color: #666666;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #FFD700;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown > span {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  min-width: 150px;
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+.dropdown-content a {
+  padding: 0.5rem 1rem;
+  color: #000000;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+  color: #FFD700;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.search {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  width: 160px;
+}
+
+.quote-btn {
+  padding: 0.5rem 1rem;
+  background-color: #f8991d;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.quote-btn:hover {
+  background-color: #e08715;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1rem;
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

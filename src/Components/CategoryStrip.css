@@ -1,0 +1,26 @@
+.category-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 0;
+  background-color: #ffffff; /* White background */
+}
+
+.category-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff8c42, #ff6b1a); /* Orangish gradient */
+  transition: transform 0.2s ease, background 0.3s ease;
+  font-family: 'Kanit', sans-serif;
+}
+
+.category-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff6b1a, #e35c0e); /* Slightly darker orange on hover */
+}
