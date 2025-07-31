@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/widhin/static/css/main.cb01e314.css",
+    "main.js": "/widhin/static/js/main.ae97bfbf.js",
+    "static/js/453.47380121.chunk.js": "/widhin/static/js/453.47380121.chunk.js",
+    "static/media/crane.jpg": "/widhin/static/media/crane.feeef9583460094e5c65.jpg",
+    "static/media/electronics.jpg": "/widhin/static/media/electronics.de7f56a045b02ea21df2.jpg",
+    "static/media/robot.jpg": "/widhin/static/media/robot.eac2cabc15779c22b395.jpg",
+    "static/media/widhin-logo.png": "/widhin/static/media/widhin-logo.1278bc11c56589f27995.png",
+    "static/media/panel.jfif": "/widhin/static/media/panel.4dd6cb6e7e3d0ead91c6.jfif",
+    "static/media/mitsubhishi3.jfif": "/widhin/static/media/mitsubhishi3.ba082b4ce62789f6e2c0.jfif",
+    "static/media/machine manufacturing.jfif": "/widhin/static/media/machine manufacturing.e65c4abb037c8d4d855c.jfif",
+    "static/media/mitsubhishi4.jfif": "/widhin/static/media/mitsubhishi4.239e81cff58be24c1cc0.jfif",
+    "static/media/slick.svg": "/widhin/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/widhin/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/widhin/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/widhin/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/widhin/index.html",
+    "main.cb01e314.css.map": "/widhin/static/css/main.cb01e314.css.map",
+    "main.ae97bfbf.js.map": "/widhin/static/js/main.ae97bfbf.js.map",
+    "453.47380121.chunk.js.map": "/widhin/static/js/453.47380121.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb01e314.css",
+    "static/js/main.ae97bfbf.js"
+  ]
+}
