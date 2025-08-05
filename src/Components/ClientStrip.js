@@ -6,7 +6,7 @@ const ClientStrip = () => {
   return (
     <div className="client-strip-container">
       <p className="client-strip-title">
-        Trusted by 11,000+ apps and the world's largest app publishers
+        Serving 11,000+ industrial clients, including the world’s largest manufacturers and automation leaders.
       </p>
       <div className="client-logos">
         <img src={pansonic} alt="Panasonic" />

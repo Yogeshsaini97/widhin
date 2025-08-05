@@ -110,7 +110,7 @@ const ProductCards = () => {
 
   return (
     <div className="product-cards-wrapper">
-      <h2 className="section-title">Explore the latest properties available</h2>
+      <h2 className="section-title">Explore the latest Products available</h2>
       <div className="card-grid">
         {products.map((item) => (
           <div key={item.id} className="product-card">
