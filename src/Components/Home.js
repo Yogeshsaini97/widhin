@@ -6,6 +6,7 @@ import CategoryStrip from "./CategoryStrip";
 import ClientStrip from "./ClientStrip";
 import HappyClients from "./HappyClients";
 import ProductCards from "./ProductCards";
+import Footer from "./Footer";
 
 export const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,9 +19,9 @@ export const Home = () => {
         <HappyClients />
         <ServicesCards />
         <ProductCards />
-        <ClientStrip />{" "}
+        <ClientStrip />
+        <Footer/>
       </div>
-      I am home new
     </div>
   );
 };
