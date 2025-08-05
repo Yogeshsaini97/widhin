@@ -20,7 +20,7 @@ export const Home = () => {
         <ProductCards />
         <ClientStrip />{" "}
       </div>
-      I am home
+      I am home new
     </div>
   );
 };
