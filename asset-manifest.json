@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.cc358622.css",
-    "main.js": "/static/js/main.d46c2be9.js",
+    "main.css": "/static/css/main.f2182674.css",
+    "main.js": "/static/js/main.f9f32ec6.js",
     "static/js/453.47380121.chunk.js": "/static/js/453.47380121.chunk.js",
-    "static/media/crane.jpg": "/static/media/crane.feeef9583460094e5c65.jpg",
-    "static/media/electronics.jpg": "/static/media/electronics.de7f56a045b02ea21df2.jpg",
+    "static/media/lt_plc.png": "/static/media/lt_plc.1bd6cba0d94228117bfa.png",
+    "static/media/mitsubishi_automation_carousel_shorter.png": "/static/media/mitsubishi_automation_carousel_shorter.9ba45d61509f6a00dbb2.png",
+    "static/media/bannerproductsimage_carousel.png": "/static/media/bannerproductsimage_carousel.6011496ca68679c6de19.png",
     "static/media/robot.jpg": "/static/media/robot.eac2cabc15779c22b395.jpg",
-    "static/media/widhin-logo.png": "/static/media/widhin-logo.1278bc11c56589f27995.png",
+    "static/media/widhinlogonew.png": "/static/media/widhinlogonew.571c9bdaa0679330f3f6.png",
     "static/media/panel.jfif": "/static/media/panel.4dd6cb6e7e3d0ead91c6.jfif",
     "static/media/mitsubhishi3.jfif": "/static/media/mitsubhishi3.ba082b4ce62789f6e2c0.jfif",
     "static/media/machine manufacturing.jfif": "/static/media/machine manufacturing.e65c4abb037c8d4d855c.jfif",
@@ -17,12 +18,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.cc358622.css.map": "/static/css/main.cc358622.css.map",
-    "main.d46c2be9.js.map": "/static/js/main.d46c2be9.js.map",
+    "main.f2182674.css.map": "/static/css/main.f2182674.css.map",
+    "main.f9f32ec6.js.map": "/static/js/main.f9f32ec6.js.map",
     "453.47380121.chunk.js.map": "/static/js/453.47380121.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc358622.css",
-    "static/js/main.d46c2be9.js"
+    "static/css/main.f2182674.css",
+    "static/js/main.f9f32ec6.js"
   ]
 }
