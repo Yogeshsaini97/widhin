@@ -18,7 +18,7 @@ const styles = {
     width: '280px',
     position: 'absolute',
     top: '140px',
-    right: '0px',
+    right: '15px',
     textAlign: 'center',
     boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
   },

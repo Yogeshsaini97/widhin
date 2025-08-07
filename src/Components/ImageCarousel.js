@@ -1,12 +1,14 @@
 import React from 'react';
 import Slider from 'react-slick';
 import '../Cssfiles/ImageCarousel.css'; // optional for custom styles
-import crane from "../images/crane.jpg"
-import electonics from "../images/electronics.jpg"
+import bannerProductsImage from "../images/bannerproductsimage_carousel.png"
+import mitsubhishicarousel from "../images/mitsubishi_automation_carousel_shorter.png"
+import ltplc from "../images/lt_plc.png"
 import robot from "../images/robot.jpg"
 
 const ImageCarousel = () => {
- const settings = {
+
+  const settings = {
     dots: true,
     infinite: true,
     fade: true,                 // fade transition instead of slide
@@ -23,15 +25,19 @@ const ImageCarousel = () => {
 
 const images = [
     {
-      url: crane,
+      url: bannerProductsImage,
       caption: "Innovating the Future with Tech Solutions"
     },
     {
-      url: electonics,
+      url: mitsubhishicarousel,
       caption: "Transforming Industrial Capabilities"
     },
     {
       url: robot,
+      caption: "Engineering Excellence, Every Day"
+    },
+    {
+      url: ltplc,
       caption: "Engineering Excellence, Every Day"
     }
   ];

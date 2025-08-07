@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import productsMenu from '../Commonjs/products';
 import '../Cssfiles/Header.css';
-import widhinLogo from "../images/widhin-logo.png";
+import widhinLogo from "../images/widhinlogonew.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +12,8 @@ const Header = () => {
     <header className="main-header">
       <div className="logo">
         <img src={widhinLogo} alt="Widhin Logo" className="logo-img" />
-        <span>Within<small>Industrial Demands Hub</small></span>
+        
+      
       </div>
 
       <nav className={menuOpen ? 'nav open' : 'nav'}>
@@ -73,16 +74,23 @@ const Header = () => {
           </div>
         </div>
 
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact-us">Contact Us</Link>
       </nav>
 
-      <div className="header-actions">
-        <input type="text" placeholder="Search" className="search" />
-        <Link to="/quote" className="quote-btn">Get a quote</Link>
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </button>
-      </div>
+     <div className="header-actions">
+      <div>
+  <div className="phone-number" style={{ color: '#f8991d', fontWeight: 'bold' }}>
+    📞 +91-9815085499
+  </div>
+  <div className="phone-number" style={{ color: '#f8991d', fontWeight: 'bold' }}>
+    📞 +91-9878585499
+  </div>
+  </div>
+  <Link to="/quote" className="quote-btn">Get a quote</Link>
+  <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+    ☰
+  </button>
+</div>
     </header>
   );
 };

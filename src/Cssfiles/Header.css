@@ -11,15 +11,14 @@ body {
 
 .main-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
+  align-items: center;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
   position: sticky;
-  top: 0;
-  z-index: 999;
+  top: 0;              /* Required for sticky */
+  z-index: 1000;
 }
 
 .logo {
@@ -29,8 +28,9 @@ body {
 }
 
 .logo img {
-  width: 40px;
-  height: 40px;
+ width: 197px;
+    height: 53px;
+    
 }
 
 .logo span {
@@ -105,7 +105,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
+  
 }
 
 .search {
@@ -158,17 +158,7 @@ body {
 
 /* -------- */
 
-/* Base styles */
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  position: relative;
-  z-index: 1000;
-}
+
 
 .logo {
   display: flex;
@@ -323,6 +313,10 @@ body {
   display: none;
 }
 
+.phone-number
+{
+  font-size:20px;
+}
 
 
 .menu-item:hover .submenu {

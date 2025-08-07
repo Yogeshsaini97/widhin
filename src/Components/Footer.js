@@ -20,21 +20,32 @@ const Footer = () => {
         {/* Contact Section */}
         <div className="footer-column">
           <h3>Customer service center</h3>
-          <p className="phone">+91-8062358946</p>
-          <p className="phone">+91-9136977315</p>
+          <p className="phone">+91-9815085499,</p>
+          <p className="phone">+91-9878585499</p>
           <p>
-            EL-27/1, Electronic Zone, TTC Industrial Area, MIDC,<br />
-            Mahape, Navi Mumbai - 400 710, Maharashtra.
+            7520a/15, 7b Streets, <br />
+           New Amar Nagar Ludhiana Punjab
+ India 141003.
           </p>
+          
           <p>
             Email:{" "}
-            <a href="mailto:salestech@selec.com">salestech@selec.com</a>
+            <a href="mailto:sainienterprise1991@gmail.com">sainienterprise1991@gmail.com</a>
+          </p>
+          <p>
+           GST No. :{" "}
+            <a >03EJVPS6459H1ZE</a>
+          </p>
+         <p>
+           MSME No. : {" "}
+            <a > PB-12-0031533</a>
           </p>
         </div>
+        
 
         {/* About Selec */}
         <div className="footer-column">
-          <h3>About Selec</h3>
+          <h3>About Widhin</h3>
           <ul>
             <li>About Us</li>
             <li>Global Network</li>
@@ -65,13 +76,7 @@ const Footer = () => {
             Keep up on our always evolving product features and technology. Enter
             your e-mail and subscribe to our newsletter.
           </p>
-          {/* <div className="newsletter">
-            <input type="email" placeholder="Email Address*" />
-            <button>Go!</button>
-          </div>
-          <div className="recaptcha">
-            <input type="checkbox" /> I'm not a robot
-          </div> */}
+         
         </div>
 
          <div className="footer-column">

@@ -15,12 +15,13 @@ export const Home = () => {
     <div>
       <div>
         <ImageCarousel />
-        <CategoryStrip /> <ExperienceBox />
+        {/* <CategoryStrip />  */}
+        <ExperienceBox />
         <HappyClients />
         <ServicesCards />
         <ProductCards />
         <ClientStrip />
-        <Footer/>
+        
       </div>
     </div>
   );

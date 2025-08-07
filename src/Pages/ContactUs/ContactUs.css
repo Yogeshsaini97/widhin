@@ -1,0 +1,263 @@
+.contact-container {
+ 
+  font-family: Arial, sans-serif;
+}
+
+.breadcrumb {
+  color: #777;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-left h3 {
+  color: #ff6600;
+}
+
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, select, textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e05a00;
+}
+
+.recaptcha-placeholder {
+  margin-bottom: 20px;
+}
+
+.form-group.radio {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+
+
+/* General layout */
+.contact-wrapper {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px;
+  background: #f9f9f9;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-header h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.contact-header p {
+  color: #777;
+}
+
+/* Two-column layout */
+.contact-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Left side - office info */
+.contact-left {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.contact-left h3 {
+  color: #ff6600;
+  margin-top: 20px;
+}
+
+/* Right side - form */
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  animation: slideIn 0.6s ease-in-out;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form elements */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 80%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #ff6600;
+  outline: none;
+}
+
+/* Radio buttons */
+.form-group.radio {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* Submit button */
+.contact-form button {
+  background: #ff6600;
+  color: white;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #e65900;
+  transform: scale(1.03);
+}
+.contact-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #f9f9f9, #ffffff);
+  border-bottom: 2px solid #eee;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.contact-header .main-heading {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-header .subheading {
+  font-size: 1.25rem;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+.contact-header .breadcrumb {
+  font-size: 0.9rem;
+  color: #ff6600;
+  font-weight: 500;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.radio-option {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+
+.radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-radio {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+}
+
+.radio-option input[type="radio"]:checked ~ .custom-radio {
+  background-color: #ff6a00; /* orange */
+  border-color: #ff6a00;
+}
+
+.custom-radio::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio-option input[type="radio"]:checked ~ .custom-radio::after {
+  display: block;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}

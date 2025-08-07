@@ -4,7 +4,7 @@
 .carousel-wrapper {
   margin: 0;
   padding: 0;
-  width: 100vw; /* full viewport width */
+   /* full viewport width */
   overflow: hidden;
 }
 .carousel-slide {
@@ -15,7 +15,7 @@
 
 .carousel-image {
   width: 100%;
-  height: 500px;
+  height: 600px;
   object-fit: cover;
   border-radius: 10px;
 }
