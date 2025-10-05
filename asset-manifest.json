@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f2182674.css",
-    "main.js": "/static/js/main.f9f32ec6.js",
+    "main.css": "/static/css/main.accd0386.css",
+    "main.js": "/static/js/main.0c35de3c.js",
     "static/js/453.47380121.chunk.js": "/static/js/453.47380121.chunk.js",
     "static/media/lt_plc.png": "/static/media/lt_plc.1bd6cba0d94228117bfa.png",
     "static/media/mitsubishi_automation_carousel_shorter.png": "/static/media/mitsubishi_automation_carousel_shorter.9ba45d61509f6a00dbb2.png",
@@ -18,12 +18,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.f2182674.css.map": "/static/css/main.f2182674.css.map",
-    "main.f9f32ec6.js.map": "/static/js/main.f9f32ec6.js.map",
+    "main.accd0386.css.map": "/static/css/main.accd0386.css.map",
+    "main.0c35de3c.js.map": "/static/js/main.0c35de3c.js.map",
     "453.47380121.chunk.js.map": "/static/js/453.47380121.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2182674.css",
-    "static/js/main.f9f32ec6.js"
+    "static/css/main.accd0386.css",
+    "static/js/main.0c35de3c.js"
   ]
 }
