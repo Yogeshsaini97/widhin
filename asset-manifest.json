@@ -1,11 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.accd0386.css",
-    "main.js": "/static/js/main.0c35de3c.js",
+    "main.css": "/static/css/main.b8584c64.css",
+    "main.js": "/static/js/main.78ee8466.js",
     "static/js/453.47380121.chunk.js": "/static/js/453.47380121.chunk.js",
+    "static/media/automatic_turning.png": "/static/media/automatic_turning.bc159ff4665c96f08673.png",
+    "static/media/Plce_panel_ai.png": "/static/media/Plce_panel_ai.2ae679c14de034269a70.png",
     "static/media/lt_plc.png": "/static/media/lt_plc.1bd6cba0d94228117bfa.png",
-    "static/media/mitsubishi_automation_carousel_shorter.png": "/static/media/mitsubishi_automation_carousel_shorter.9ba45d61509f6a00dbb2.png",
-    "static/media/bannerproductsimage_carousel.png": "/static/media/bannerproductsimage_carousel.6011496ca68679c6de19.png",
+    "static/media/Automation_projects_one.jpg": "/static/media/Automation_projects_one.9555508f5d9549d09509.jpg",
+    "static/media/Automation_projects_second.jpg": "/static/media/Automation_projects_second.98291d4cdf3e8acd94e7.jpg",
     "static/media/robot.jpg": "/static/media/robot.eac2cabc15779c22b395.jpg",
     "static/media/widhinlogonew.png": "/static/media/widhinlogonew.571c9bdaa0679330f3f6.png",
     "static/media/panel.jfif": "/static/media/panel.4dd6cb6e7e3d0ead91c6.jfif",
@@ -18,12 +20,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.accd0386.css.map": "/static/css/main.accd0386.css.map",
-    "main.0c35de3c.js.map": "/static/js/main.0c35de3c.js.map",
+    "main.b8584c64.css.map": "/static/css/main.b8584c64.css.map",
+    "main.78ee8466.js.map": "/static/js/main.78ee8466.js.map",
     "453.47380121.chunk.js.map": "/static/js/453.47380121.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.accd0386.css",
-    "static/js/main.0c35de3c.js"
+    "static/css/main.b8584c64.css",
+    "static/js/main.78ee8466.js"
   ]
 }
