@@ -1,0 +1,21 @@
+.also-viewed { margin-top:36px; }
+.also-viewed h3 { margin-bottom:12px; }
+.also-scroll {
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding-bottom:8px;
+}
+.also-card {
+  min-width:180px;
+  border:1px solid #eee;
+  border-radius:10px;
+  padding:12px;
+  background:white;
+  cursor:pointer;
+  transition:transform .2s ease;
+}
+.also-card:hover { transform:translateY(-6px); box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+.also-img { width:100%; height:110px; object-fit:contain; margin-bottom:8px; }
+.also-name { font-size:0.95rem; font-weight:600; color:#222; margin-bottom:6px; }
+.also-price { font-size:0.9rem; color:#1d7b32; }

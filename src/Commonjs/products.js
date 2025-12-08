@@ -3,15 +3,16 @@ import controller from "../images/Controller.svg";
 
 const productsMenu = [
   {
-    category: "Controllers",
-    icon: controller,
+    category: "Industrial Automations",
+     path: "/all-products/industrial-automations",
+    icon: undefined,
     items: [
       {
-        label: "Programmable Controllers MELSEC",
-        path: "/products/melsec",
+        label: "PLC's",
+        path: "/all-products/industrial-automations/plc",
         children: [
-          { label: "MELSEC iQ-R", path: "/products/melsec/iq-r" },
-          { label: "MELSEC iQ-F", path: "/products/melsec/iq-f" },
+          { label: "Siemens S7-1200", path: "/all-products/product/industrial-automations/plc/plc1" },
+           { label: "Allen Bradley MicroLogix", path: "/all-products/product/industrial-automations/plc/plc2" }
         ],
       },
       { label: "Simple Application Controllers", path: "/products/simple-controllers" },
@@ -20,7 +21,8 @@ const productsMenu = [
   },
   {
     category: "Drive Products",
-    icon: controller,
+     path: "/all-products/drive-products",
+    icon: undefined,
     items: [
       {
         label: "AC Servos-MELSERVO",
@@ -38,7 +40,7 @@ const productsMenu = [
   },
   {
     category: "Visualization",
-    icon: controller,
+    icon: undefined,
     items: [
       { label: "HMIs - GOT", path: "/products/hmi" , children: [
           { label: "MELSEC iQ-R", path: "/products/melsec/iq-r" },
@@ -49,7 +51,7 @@ const productsMenu = [
   },
   {
     category: "Industrial Robots",
-    icon: controller,
+    icon: undefined,
     items: [
       { label: "Collaborative Robots - MELFA", path: "/products/cobots" },
       { label: "Industrial Robots - MELFA", path: "/products/robots" },

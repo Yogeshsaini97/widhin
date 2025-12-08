@@ -1,0 +1,35 @@
+.sticky-buy-box {
+  position: sticky;
+  top: 90px; /* adjust depending on header height */
+}
+.buy-box-inner {
+  width: 320px;
+  border: 1px solid #e6e6e6;
+  padding: 18px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.price-row { display:flex; flex-direction:column; }
+.price-label { color:#777; font-size:0.9rem; }
+.price-value { font-size:1.4rem; font-weight:700; color:#1d7b32; margin-top:6px; }
+
+.availability { font-size:0.95rem; display:flex; gap:8px; align-items:center; }
+.avail-badge { padding:4px 8px; border-radius:8px; font-weight:600; font-size:0.85rem; }
+.avail-badge.in-stock { background:#e6f8ee; color:#1d7b32; }
+.avail-badge.limited { background:#fff7e6; color:#d18b00; }
+.avail-badge.out-stock { background:#fff0f0; color:#c62828; }
+
+.quote-btn {
+  padding:10px; color:white; border:none; border-radius:8px; cursor:pointer;
+}
+.inquiry-btn {
+  padding:10px; background:#f3f3f3; color:#222; border:none; border-radius:8px; cursor:pointer;
+}
+.extras { display:flex; flex-direction:column; gap:6px; font-size:0.9rem; color:#555; }
+.datasheet-link { text-decoration:none; color:#0077ff; }
+.rating-small { color:#444; }

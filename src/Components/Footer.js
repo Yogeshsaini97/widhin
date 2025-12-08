@@ -20,8 +20,8 @@ const Footer = () => {
         {/* Contact Section */}
         <div className="footer-column">
           <h3>Customer service center</h3>
-          <p className="phone">+91-9815085499,</p>
-          <p className="phone">+91-9878585499</p>
+          <p className="phone">+91-98150-85499,</p>
+          <p className="phone">+91-62808-85499</p>
           <p>
             7520a/15, 7b Streets, <br />
            New Amar Nagar Ludhiana Punjab

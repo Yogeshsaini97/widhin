@@ -1,0 +1,33 @@
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 20px 0;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+      padding: 10px 60px;
+}
+
+.breadcrumb {
+     color: #0078ff;
+    text-decoration: none;
+    font-weight: 500;
+    /* color: rgb(248, 153, 29); */
+    /* font-weight: bold; */
+    color: #444;
+    font-weight: 600;
+}
+
+.breadcrumb:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-arrow {
+  color: #555;
+  margin: 0 4px;
+}
+
+.breadcrumb.current {
+      color: rgb(248, 153, 29);
+    font-weight: bold;
+}

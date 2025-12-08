@@ -1,8 +1,7 @@
 /* Header.css */
-body {
-  font-family: 'Kanit', sans-serif;
-}
-
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
 .logo-img {
   height: 50px;
   width: auto;
@@ -56,11 +55,13 @@ body {
   text-decoration: none;
   color: #000000;
   font-weight: 500;
+  font-size:13px;
   transition: color 0.3s ease;
 }
 
 .nav a:hover {
   color: #FFD700;
+  font-size:13px;
 }
 
 .dropdown {
@@ -70,6 +71,7 @@ body {
 .dropdown > span {
   cursor: pointer;
   font-weight: 500;
+  font-size:13px;
 }
 
 .dropdown-content {
@@ -180,10 +182,12 @@ body {
 .nav a {
   text-decoration: none;
   color: #333;
+  font-size:13px;
 }
 
 .nav a:hover {
   color: #007bff;
+  font-size:13px;
 }
 
 /* Mega dropdown */
@@ -298,7 +302,7 @@ body {
 .quote-btn {
 
   background: #f8991d;
-  
+  font-size:10px;
   border-radius: 10px;
 
    padding: 0.5rem 1rem;
@@ -315,7 +319,7 @@ body {
 
 .phone-number
 {
-  font-size:20px;
+  font-size:14px;
 }
 
 

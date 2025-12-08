@@ -1,0 +1,10 @@
+.qa-section { margin-top:36px; padding:18px; border-radius:10px; border:1px solid #eee; background:#fff; }
+.qa-form { display:flex; gap:8px; margin-bottom:14px; }
+.qa-form input { flex:1; padding:10px; border-radius:8px; border:1px solid #ddd; }
+.qa-form button { padding:10px 14px; background:#0077ff; color:white; border:none; border-radius:8px; cursor:pointer; }
+.qa-list .qa-item { padding:10px; border-top:1px solid #f1f1f1; }
+.qa-q { font-weight:600; }
+.qa-a { margin-top:6px; color:#333; }
+.qa-actions { margin-top:8px; }
+.qa-actions button { padding:6px 10px; background:#f3f3f3; border:none; border-radius:6px; cursor:pointer; }
+.muted { color:#777; }

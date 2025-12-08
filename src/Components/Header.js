@@ -20,7 +20,9 @@ const Header = () => {
         <Link to="/">Home</Link>
 
         <div className="dropdown mega-dropdown">
-          <span>Products ▾</span>
+         <Link to="/all-products" className="product-link">
+  <span>Products ▾</span>
+</Link>
           <div className="mega-menu">
             {productsMenu.map((group, idx) => (
               <div className="column" key={idx}>
@@ -28,7 +30,12 @@ const Header = () => {
         {group.icon && (
           <img src={group.icon} alt={group.category} className="category-icon" />
         )}
-        <strong>{group.category}</strong>
+         <Link to={group.path} className="menu-link mb-2">
+ 
+  <strong>{group.category}</strong>
+  { <span className="arrow-icon"> ▶ </span>}
+</Link>
+       
       </div>
                {group.items.map((item, itemIdx) => (
   <div key={itemIdx} className="menu-item">
@@ -80,10 +87,10 @@ const Header = () => {
      <div className="header-actions">
       <div>
   <div className="phone-number" style={{ color: '#f8991d', fontWeight: 'bold' }}>
-    📞 +91-9815085499
+     +91-98150-85499
   </div>
   <div className="phone-number" style={{ color: '#f8991d', fontWeight: 'bold' }}>
-    📞 +91-9878585499
+     +91-62808-85499
   </div>
   </div>
   <Link to="/quote" className="quote-btn">Get a quote</Link>

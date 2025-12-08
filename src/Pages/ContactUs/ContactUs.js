@@ -37,7 +37,7 @@ const ContactUs = () => {
           <h3>Ludhiana Office</h3>
           <p><strong>Address:</strong> SAINI ENTERPRISES,  7520a/15, 7b Streets, New Amar Nagar Ludhiana Punjab
  India 141003</p>
-          <p><strong>Mob:</strong> +91 9815085499 / 9878585499</p>
+          <p><strong>Mob:</strong> +91 98150-85499 / 62808-85499</p>
           <p><strong>Email:</strong> sainienterprise1991@gmail.com</p>
           <p><strong>GST No.:</strong> 03EJVPS6459H1ZE </p>
           <p><strong> MSME No. :</strong> PB-12-0031533</p>

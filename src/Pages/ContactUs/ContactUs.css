@@ -1,7 +1,4 @@
-.contact-container {
- 
-  font-family: Arial, sans-serif;
-}
+
 
 .breadcrumb {
   color: #777;
@@ -65,7 +62,7 @@ button:hover {
 
 /* General layout */
 .contact-wrapper {
-  font-family: 'Segoe UI', sans-serif;
+
   padding: 40px;
   background: #f9f9f9;
 }
