@@ -1,0 +1,81 @@
+.markets-section {
+  padding: 40px 20px;
+  background: #f8f9fb;
+}
+
+.markets-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1f2937;
+  letter-spacing: 0.5px;
+}
+
+/* Container */
+.markets-container {
+  display: flex;
+  height: 360px;
+  gap: 8px;
+}
+
+/* Each vertical strip */
+.market-card {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  transition: flex 0.6s ease;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Expand on hover */
+.market-card:hover {
+  flex: 4;
+}
+
+/* Overlay */
+.market-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.1)
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+}
+
+.market-card:hover .market-overlay {
+  opacity: 1;
+}
+
+/* Text */
+.market-overlay h3 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .markets-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .market-card {
+    height: 200px;
+  }
+
+  .market-card:hover {
+    flex: 1;
+  }
+}

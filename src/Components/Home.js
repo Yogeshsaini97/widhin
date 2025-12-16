@@ -7,6 +7,7 @@ import ClientStrip from "./ClientStrip";
 import HappyClients from "./HappyClients";
 import ProductCards from "./ProductCards";
 import Footer from "./Footer";
+import Markets from "../Pages/Our_markets/Markets";
 
 export const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,6 +18,7 @@ export const Home = () => {
         <ImageCarousel />
         {/* <CategoryStrip />  */}
         <ExperienceBox />
+         <Markets/>
         <HappyClients />
         <ServicesCards />
         <ProductCards />

@@ -8,9 +8,9 @@ import panelImage from "../images/panel.jfif";
 import machineImage from "../images/machine manufacturing.jfif";
 import automationImage from "../images/industrialautomation.png";
 
-import panelVideo from "../Videos/panel.mp4";
-import machineVideo from "../Videos/machine.mp4";
-import automationVideo from "../Videos/automation.mp4";
+import panelVideo from "./Videos/panel.mp4";
+import machineVideo from "./Videos/machine.mp4";
+import automationVideo from "./Videos/automation.mp4";
 
 const services = [
   {
