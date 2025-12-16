@@ -9,6 +9,7 @@ import { ProductCategories } from './Pages/ProductCategories';
 import { ProductItems } from './Pages/ProductItems';
 import { Breadcrumbs } from './Pages/Breadcrumbs/Breadcrumbs';
 import { ProductDetail } from './Pages/ProductDetail';
+import "./App.css"
 
 
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <Router>
       <Header/>
+      
       {console.log(window.location.pathname)}
        
        {!(window.location.pathname==="/") && <Breadcrumbs />  }

@@ -1,136 +1,215 @@
-import React from "react";
-import panelImage from "../images/panel.jfif";
-import industrialautomation from "../images/industrialautomation.png";
-import machine from "../images/machine manufacturing.jfif";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { FaIndustry, FaCogs, FaTools, FaPlay } from "react-icons/fa";
+import VideoModal from "../Components/ServicesSection/VideoModal";
 
-const cardData = [
+import panelImage from "../images/panel.jfif";
+import machineImage from "../images/machine manufacturing.jfif";
+import automationImage from "../images/industrialautomation.png";
+
+import panelVideo from "../Videos/panel.mp4";
+import machineVideo from "../Videos/machine.mp4";
+import automationVideo from "../Videos/automation.mp4";
+
+const services = [
   {
     title: "Panel Manufacturing",
     description:
-      "Custom-designed control panels with robust wiring and top-tier components.",
+      "Design and manufacturing of high-quality electrical control panels with certified components and safety compliance.",
     image: panelImage,
+    video: panelVideo,
+    icon: FaIndustry,
+    link: "/services/panel-manufacturing",
+    badges: ["ISO Ready", "Custom Design", "UL Components"],
+    industries: ["Pharma", "Manufacturing", "Energy"],
   },
   {
     title: "Machine Manufacturing",
     description:
-      "Precision-crafted machines tailored to industrial and commercial needs.",
-    image: machine,
+      "Precision-engineered industrial machines built for performance, scalability, and long-term reliability.",
+    image: machineImage,
+    video: machineVideo,
+    icon: FaCogs,
+    link: "/services/machine-manufacturing",
+    badges: ["High Precision", "Custom Automation"],
+    industries: ["Automotive", "Textile", "FMCG"],
   },
   {
     title: "Industrial Automation Spares",
     description:
-      "High-quality spare parts for seamless industrial automation maintenance.",
-    image: industrialautomation,
+      "Certified automation spare parts ensuring minimal downtime and seamless system maintenance.",
+    image: automationImage,
+    video: automationVideo,
+    icon: FaTools,
+    link: "/services/industrial-automation-spares",
+    badges: ["Fast Delivery", "OEM Quality"],
+    industries: ["Factories", "Process Plants"],
   },
 ];
 
 const ServiceGrid = () => {
+  const [activeVideo, setActiveVideo] = useState(null);
+
   return (
-    <section style={styles.section}>
-      <div style={styles.header}>
-        <h2 style={styles.title}>Our Services</h2>
-        <p style={styles.subtitle}>Empowering Industry Through Innovation</p>
+    <section className="py-24 bg-white dark:bg-neutral-900">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* HEADER */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <span className="text-brand font-semibold uppercase tracking-wide">
+            Our Expertise
+          </span>
+          <h2 className="text-4xl font-bold mt-3 text-neutral-900 dark:text-white">
+            Enterprise-Grade Industrial Services
+          </h2>
+          <p className="mt-5 max-w-2xl mx-auto text-neutral-600 dark:text-neutral-400">
+            Trusted engineering solutions delivering reliability, performance,
+            and long-term value.
+          </p>
+        </motion.div>
+
+        {/* GRID */}
+        <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, idx) => (
+            <ServiceCard
+              key={idx}
+              service={service}
+              onOpenVideo={() => setActiveVideo(service.video)}
+            />
+          ))}
+        </div>
       </div>
-      <div style={styles.grid}>
-        {cardData.map((item, index) => (
-          <div
-            key={index}
-            style={{
-              ...styles.card,
-              flexDirection: index % 2 === 0 ? "row" : "row-reverse",
-            }}
-          >
-            <div style={styles.cardText}>
-              <h3 style={styles.cardTitle}>{item.title}</h3>
-              <p style={styles.cardDesc}>{item.description}</p>
-              <a href="#" style={styles.learnMore}>
-                Learn More →
-              </a>
-            </div>
-            <div style={styles.cardImageWrapper}>
-              <img src={item.image} alt={item.title} style={styles.cardImage} />
-            </div>
-          </div>
-        ))}
-      </div>
-      
+
+      {/* FULL SCREEN VIDEO */}
+      {activeVideo && (
+        <VideoModal video={activeVideo} onClose={() => setActiveVideo(null)} />
+      )}
     </section>
   );
 };
 
-const styles = {
-  section: {
-    backgroundColor: "#0f0f11",
-    color: "#fff",
-    padding: "80px 20px",
-    textAlign: "center",
-  },
-  header: {
-    marginBottom: "60px",
-  },
-  title: {
-    fontSize: "36px",
-    fontWeight: "700",
-    fontFamily: "Kanit, sans-serif",
-  },
-  subtitle: {
-    marginTop: "10px",
-    fontSize: "18px",
-    opacity: 0.7,
-    fontFamily: "Kanit, sans-serif",
-  },
-  grid: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "50px",
-    alignItems: "center",
-  },
-  card: {
-    background: "linear-gradient(145deg, #1a1a1d, #242429)",
-    borderRadius: "20px",
-    width: "100%",
-    maxWidth: "1000px",
-    padding: "30px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
-    transition: "transform 0.3s",
-    gap: "30px",
-  },
-  cardText: {
-    flex: 1,
-    textAlign: "left",
-    fontFamily: "Kanit, sans-serif",
-  },
-  cardTitle: {
-    fontSize: "24px",
-    fontWeight: "600",
-    marginBottom: "15px",
-  },
-  cardDesc: {
-    fontSize: "15px",
-    opacity: 0.85,
-    marginBottom: "20px",
-    lineHeight: "1.6",
-  },
-  learnMore: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: "14px",
-    textDecoration: "none",
-    borderBottom: "1px solid #fff",
-  },
-  cardImageWrapper: {
-    flex: 1,
-    textAlign: "center",
-  },
-  cardImage: {
-    maxWidth: "100%",
-    height: "auto",
-    borderRadius: "12px",
-    objectFit: "cover",
-  },
-};
-
 export default ServiceGrid;
+
+/* ---------------- CARD COMPONENT ---------------- */
+
+const ServiceCard = ({ service, onOpenVideo }) => {
+  const videoRef = useRef(null);
+  const containerRef = useRef(null);
+  const [loaded, setLoaded] = useState(false);
+  const [playedOnce, setPlayedOnce] = useState(false);
+
+  // Lazy load video
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setLoaded(true);
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleHover = () => {
+    if (!playedOnce && videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+      setPlayedOnce(true);
+    }
+  };
+
+  return (
+    <motion.div
+      ref={containerRef}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="group bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:-translate-y-4 hover:shadow-2xl transition-all duration-500"
+    >
+      {/* MEDIA */}
+      <div
+        className="relative h-56 overflow-hidden"
+        onMouseEnter={handleHover}
+        onTouchStart={handleHover}
+      >
+        {/* IMAGE */}
+        <img
+          src={service.image}
+          alt={service.title}
+          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+        />
+
+        {/* VIDEO */}
+        {loaded && (
+          <video
+            ref={videoRef}
+            src={service.video}
+            muted
+            playsInline
+            className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          />
+        )}
+
+        {/* ICON */}
+        <div className="absolute top-4 left-4 bg-brand text-white p-3 rounded-xl shadow-lg">
+          <service.icon size={22} />
+        </div>
+
+        {/* PLAY BUTTON */}
+        <button
+          onClick={onOpenVideo}
+          className="absolute bottom-4 right-4 bg-black/60 text-white p-3 rounded-full hover:bg-brand transition"
+        >
+          <FaPlay size={14} />
+        </button>
+      </div>
+
+      {/* CONTENT */}
+      <div className="p-8">
+        <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
+          {service.title}
+        </h3>
+
+        <div className="w-12 h-1 bg-brand my-4"></div>
+
+        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-5">
+          {service.description}
+        </p>
+
+        {/* BADGES */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {service.badges.map((badge, i) => (
+            <span
+              key={i}
+              className="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand"
+            >
+              {badge}
+            </span>
+          ))}
+        </div>
+
+        {/* INDUSTRIES */}
+        <p className="text-xs text-neutral-500 mb-6">
+          Industries: {service.industries.join(", ")}
+        </p>
+
+        {/* CTA */}
+        <Link
+          to={service.link}
+          className="inline-flex items-center gap-2 text-brand font-semibold hover:gap-4 transition-all"
+        >
+          Explore Service →
+        </Link>
+      </div>
+    </motion.div>
+  );
+};
