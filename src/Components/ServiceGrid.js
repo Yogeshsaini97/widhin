@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaIndustry, FaCogs, FaTools, FaPlay } from "react-icons/fa";
+
 import VideoModal from "../Components/ServicesSection/VideoModal";
 
 import panelImage from "../images/panel.jfif";
@@ -11,6 +12,8 @@ import automationImage from "../images/industrialautomation.png";
 import panelVideo from "./Videos/panel.mp4";
 import machineVideo from "./Videos/machine.mp4";
 import automationVideo from "./Videos/automation.mp4";
+
+/* ---------------- DATA ---------------- */
 
 const services = [
   {
@@ -48,6 +51,8 @@ const services = [
   },
 ];
 
+/* ---------------- GRID ---------------- */
+
 const ServiceGrid = () => {
   const [activeVideo, setActiveVideo] = useState(null);
 
@@ -55,26 +60,45 @@ const ServiceGrid = () => {
     <section className="py-24 bg-white dark:bg-neutral-900">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* HEADER */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <span className="text-brand font-semibold uppercase tracking-wide">
-            Our Expertise
-          </span>
-          <h2 className="text-4xl font-bold mt-3 text-neutral-900 dark:text-white">
-            Enterprise-Grade Industrial Services
-          </h2>
-          <p className="mt-5 max-w-2xl mx-auto text-neutral-600 dark:text-neutral-400">
-            Trusted engineering solutions delivering reliability, performance,
-            and long-term value.
-          </p>
-        </motion.div>
+       <motion.div
+  initial={{ opacity: 0, y: 28 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="text-center mb-20"
+>
+  {/* EYEBROW */}
+  <span className="inline-block text-brand font-semibold uppercase tracking-widest text-sm">
+    Our Expertise
+  </span>
 
-        {/* GRID */}
+  {/* MAIN HEADING */}
+  <h2 className="text-4xl md:text-5xl font-bold mt-4 text-neutral-900 dark:text-white leading-tight">
+    Advanced Industrial <span className="relative inline-block">
+      Engineering
+      <span className="absolute left-0 -bottom-2 w-full h-1 bg-brand rounded-full"></span>
+    </span>{" "}
+    Solutions
+  </h2>
+
+  {/* SUBTEXT */}
+  <p className="mt-6 max-w-2xl mx-auto text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+    From precision control panels to intelligent automation systems, we deliver
+    reliable, scalable, and future-ready industrial engineering solutions.
+  </p>
+
+  {/* MICRO TRUST LINE */}
+  <div className="mt-6 flex justify-center gap-6 text-xs text-neutral-500">
+    <span>ISO-Ready Processes</span>
+    <span className="w-1 h-1 bg-neutral-400 rounded-full self-center"></span>
+    <span>OEM-Grade Components</span>
+    <span className="w-1 h-1 bg-neutral-400 rounded-full self-center"></span>
+    <span>Proven Industry Expertise</span>
+  </div>
+</motion.div>
+
+
+
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, idx) => (
             <ServiceCard
@@ -86,9 +110,11 @@ const ServiceGrid = () => {
         </div>
       </div>
 
-      {/* FULL SCREEN VIDEO */}
       {activeVideo && (
-        <VideoModal video={activeVideo} onClose={() => setActiveVideo(null)} />
+        <VideoModal
+          video={activeVideo}
+          onClose={() => setActiveVideo(null)}
+        />
       )}
     </section>
   );
@@ -96,78 +122,87 @@ const ServiceGrid = () => {
 
 export default ServiceGrid;
 
-/* ---------------- CARD COMPONENT ---------------- */
+/* ---------------- CARD ---------------- */
 
 const ServiceCard = ({ service, onOpenVideo }) => {
   const videoRef = useRef(null);
-  const containerRef = useRef(null);
-  const [loaded, setLoaded] = useState(false);
-  const [playedOnce, setPlayedOnce] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [ready, setReady] = useState(false);
 
-  // Lazy load video
+  /* Ensure video can play */
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) setLoaded(true);
-        });
-      },
-      { threshold: 0.3 }
-    );
+    const video = videoRef.current;
+    if (!video) return;
 
-    if (containerRef.current) observer.observe(containerRef.current);
-    return () => observer.disconnect();
+    const onCanPlay = () => setReady(true);
+    video.addEventListener("canplay", onCanPlay);
+
+    return () => video.removeEventListener("canplay", onCanPlay);
   }, []);
 
-  const handleHover = () => {
-    if (!playedOnce && videoRef.current) {
+  const onEnter = async () => {
+    setHovered(true);
+    if (videoRef.current && ready) {
       videoRef.current.currentTime = 0;
-      videoRef.current.play();
-      setPlayedOnce(true);
+      try {
+        await videoRef.current.play();
+      } catch {}
+    }
+  };
+
+  const onLeave = () => {
+    setHovered(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
     }
   };
 
   return (
     <motion.div
-      ref={containerRef}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="group bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:-translate-y-4 hover:shadow-2xl transition-all duration-500"
+      className="bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden
+                 shadow-lg hover:-translate-y-3 hover:shadow-2xl
+                 transition-all duration-500"
     >
       {/* MEDIA */}
       <div
-        className="relative h-56 overflow-hidden"
-        onMouseEnter={handleHover}
-        onTouchStart={handleHover}
+        className="relative h-56"
+        onMouseEnter={onEnter}
+        onMouseLeave={onLeave}
+        onTouchStart={onEnter}
       >
-        {/* IMAGE */}
+        {/* VIDEO (BOTTOM LAYER) */}
+        <video
+          ref={videoRef}
+          src={service.video}
+          muted
+          playsInline
+          preload="auto"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500
+            ${hovered ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+        />
+
+        {/* IMAGE (TOP LAYER) */}
         <img
           src={service.image}
           alt={service.title}
-          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500
+            ${hovered ? "opacity-0 z-0" : "opacity-100 z-10"}`}
         />
 
-        {/* VIDEO */}
-        {loaded && (
-          <video
-            ref={videoRef}
-            src={service.video}
-            muted
-            playsInline
-            className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          />
-        )}
-
         {/* ICON */}
-        <div className="absolute top-4 left-4 bg-brand text-white p-3 rounded-xl shadow-lg">
+        <div className="absolute top-4 left-4 z-20 bg-brand text-white p-3 rounded-xl shadow-lg">
           <service.icon size={22} />
         </div>
 
         {/* PLAY BUTTON */}
         <button
           onClick={onOpenVideo}
-          className="absolute bottom-4 right-4 bg-black/60 text-white p-3 rounded-full hover:bg-brand transition"
+          className="absolute bottom-4 right-4 z-20 bg-black/60 text-white
+                     p-3 rounded-full hover:bg-brand transition"
         >
           <FaPlay size={14} />
         </button>
@@ -185,27 +220,9 @@ const ServiceCard = ({ service, onOpenVideo }) => {
           {service.description}
         </p>
 
-        {/* BADGES */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {service.badges.map((badge, i) => (
-            <span
-              key={i}
-              className="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand"
-            >
-              {badge}
-            </span>
-          ))}
-        </div>
-
-        {/* INDUSTRIES */}
-        <p className="text-xs text-neutral-500 mb-6">
-          Industries: {service.industries.join(", ")}
-        </p>
-
-        {/* CTA */}
         <Link
           to={service.link}
-          className="inline-flex items-center gap-2 text-brand font-semibold hover:gap-4 transition-all"
+          className="inline-flex items-center gap-2 text-brand font-semibold"
         >
           Explore Service →
         </Link>
