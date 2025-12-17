@@ -28,14 +28,14 @@ const points = [
     title: "Proven Execution",
     metric: "1200+ Machines",
     desc: "Successfully commissioned systems across multiple industries.",
-    badges: ["Custom"],
+    badges: ["Installed Base"],
   },
   {
     icon: FaTools,
     title: "After-Sales Support",
     metric: "99% Retention",
     desc: "Reliable service, spares, AMC, and long-term partnerships.",
-    badges: ["Support"],
+    badges: ["Service", "AMC"],
   },
 ];
 
@@ -51,11 +51,11 @@ const containerVariants = {
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.45, ease: "easeOut" },
   },
 };
 
@@ -63,17 +63,20 @@ const cardVariants = {
 
 const WhyChooseUs = () => {
   return (
-    <section className="relative py-16 bg-white dark:bg-neutral-900">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="relative bg-white dark:bg-neutral-900">
+      {/* Top industrial divider */}
+      <div className="h-1 w-full bg-gradient-to-r from-transparent via-[#f8991d] to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-6 py-16">
 
         {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto"
         >
-          <span className="text-brand uppercase tracking-widest text-sm font-semibold">
+          <span className="text-[#f8991d] uppercase tracking-widest text-sm font-semibold">
             Why Choose Us
           </span>
 
@@ -82,9 +85,14 @@ const WhyChooseUs = () => {
           </h2>
 
           <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-            Trusted automation and machine manufacturing backed by experience,
+            Automation and machine manufacturing backed by experience,
             compliance, and long-term support.
           </p>
+
+          {/* Capability signal */}
+          <div className="mt-6 text-xs uppercase tracking-widest text-neutral-500">
+            Engineering &nbsp;•&nbsp; Automation &nbsp;•&nbsp; Compliance &nbsp;•&nbsp; Support
+          </div>
         </motion.div>
 
         {/* CARDS */}
@@ -103,43 +111,45 @@ const WhyChooseUs = () => {
                 key={i}
                 variants={cardVariants}
                 whileHover={{ y: -6 }}
-                className="group bg-white dark:bg-neutral-800
-                           border border-neutral-200 dark:border-neutral-700
+                className="group relative bg-white dark:bg-neutral-800
+                           border border-neutral-200/80 dark:border-neutral-700/80
                            rounded-2xl p-6
-                           shadow-sm hover:shadow-xl
+                           shadow-[0_6px_20px_rgba(0,0,0,0.06)]
+                           hover:shadow-[0_14px_40px_rgba(248,153,29,0.15)]
                            transition-all duration-300"
               >
-                {/* TOP */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand">
-                    <Icon size={22} />
-                  </div>
+                {/* Metric badge */}
+                <span className="absolute -top-3 right-4 text-xs font-semibold px-3 py-1 rounded-full
+                                 bg-neutral-100 dark:bg-neutral-700
+                                 text-neutral-700 dark:text-neutral-200">
+                  {p.metric}
+                </span>
 
-                  {/* METRIC */}
-                  <span className="text-xs font-semibold px-3 py-1 rounded-full
-                                   bg-neutral-100 dark:bg-neutral-700
-                                   text-neutral-700 dark:text-neutral-200">
-                    {p.metric}
-                  </span>
+                {/* Icon */}
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl
+                                bg-[#f8991d]/10 text-[#f8991d] mb-4">
+                  <Icon size={22} />
                 </div>
 
-                {/* TITLE */}
+                {/* Title */}
                 <h3 className="text-base font-semibold text-neutral-900 dark:text-white">
                   {p.title}
                 </h3>
 
-                {/* DESCRIPTION */}
+                {/* Description */}
                 <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                   {p.desc}
                 </p>
 
-                {/* BADGES */}
-                <div className="mt-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                {/* Badges */}
+                <div className="mt-4 flex gap-2 translate-y-2 opacity-0
+                                group-hover:opacity-100 group-hover:translate-y-0
+                                transition-all duration-300">
                   {p.badges.map((badge, idx) => (
                     <span
                       key={idx}
                       className="text-xs px-2 py-1 rounded-full
-                                 bg-brand/10 text-brand font-medium"
+                                 bg-[#f8991d]/10 text-[#f8991d] font-medium"
                     >
                       {badge}
                     </span>
@@ -150,20 +160,8 @@ const WhyChooseUs = () => {
           })}
         </motion.div>
 
-        {/* CLIENT LOGOS (SUBTLE) */}
-        <div className="mt-14 border-t border-neutral-200 dark:border-neutral-800 pt-8">
-          <p className="text-center text-xs uppercase tracking-widest text-neutral-500 mb-6">
-            Trusted by Industry Leaders
-          </p>
+        
 
-          <div className="flex flex-wrap justify-center items-center gap-10 opacity-60">
-            {/* Replace with real logos */}
-            <span className="text-sm font-semibold text-neutral-400">SIEMENS</span>
-            <span className="text-sm font-semibold text-neutral-400">ABB</span>
-            <span className="text-sm font-semibold text-neutral-400">SCHNEIDER</span>
-            <span className="text-sm font-semibold text-neutral-400">ROCKWELL</span>
-          </div>
-        </div>
       </div>
     </section>
   );

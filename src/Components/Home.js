@@ -15,6 +15,7 @@ import FeaturedProjects from "./MoreExamples/FeaturedProjects";
 import CertificationsStrip from "./MoreExamples/CertificationsStrip";
 import IndustryCTA from "./MoreExamples/IndustryCTA";
 import Testimonials from "./MoreExamples/Testimonials";
+import AutomationEcosystem from "./MoreExamples/AutomationEcosystem";
 
 export const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,6 +27,7 @@ export const Home = () => {
             <HappyClients />
              <ServicesCards />
              <WhyChooseUs />
+               <AutomationEcosystem />
              <CertificationsStrip/>
              
                <ProcessFlow/>
