@@ -22,7 +22,7 @@ export default function StickyBuyBox({ item, product, category }) {
         <div className="model-line"><strong>Model:</strong> {item.model}</div>
 
         <button className="quote-btn" onClick={() => alert("Quote request sent (demo)")}>Request a Quote</button>
-        <button className="inquiry-btn" onClick={() => navigate("/contact-us")}>Contact Supplier</button>
+        <button className="inquiry-btn" onClick={() => navigate("/cotact")}>Contact Supplier</button>
 
         <div className="extras">
           <a href={item.datasheet} target="_blank" rel="noreferrer" className="datasheet-link">📄 Download Datasheet</a>

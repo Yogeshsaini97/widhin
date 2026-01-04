@@ -23,7 +23,8 @@ export const Home = () => {
   return (
     <div>
       <div>
-           <HeroSection/>
+         <ImageCarousel />
+           {/* <HeroSection/> */}
             <HappyClients />
              <ServicesCards />
              <WhyChooseUs />
@@ -36,7 +37,7 @@ export const Home = () => {
 
 <ExperienceBox /> 
 
-        {/* <ImageCarousel /> */}
+       
         
        
         

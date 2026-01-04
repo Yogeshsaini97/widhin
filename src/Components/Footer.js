@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaYoutube,
@@ -11,7 +12,6 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaWhatsapp,
-  FaCertificate,
   FaShieldAlt,
 } from "react-icons/fa";
 
@@ -28,8 +28,6 @@ const Footer = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="bg-neutral-900 text-neutral-300"
       >
-       
-
         {/* MAIN FOOTER */}
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -42,13 +40,16 @@ const Footer = () => {
               </h3>
 
               <div className="space-y-3 text-sm">
-                <p className="flex gap-3">
+                <a
+                  href="tel:+919815085499"
+                  className="flex gap-3 hover:text-white"
+                >
                   <FaPhoneAlt className="text-[#f8991d] mt-1" />
                   <span>
                     +91-98150-85499<br />
                     +91-62808-85499
                   </span>
-                </p>
+                </a>
 
                 <button
                   onClick={() => setShowMap(true)}
@@ -62,15 +63,13 @@ const Footer = () => {
                   </span>
                 </button>
 
-                <p className="flex gap-3">
+                <a
+                  href="mailto:sainienterprise1991@gmail.com"
+                  className="flex gap-3 hover:text-white"
+                >
                   <FaEnvelope className="text-[#f8991d] mt-1" />
-                  <a
-                    href="mailto:sainienterprise1991@gmail.com"
-                    className="hover:text-white"
-                  >
-                    sainienterprise1991@gmail.com
-                  </a>
-                </p>
+                  <span>sainienterprise1991@gmail.com</span>
+                </a>
 
                 <p className="text-xs text-neutral-400">
                   <strong>GST:</strong> 03EJVPS6459H1ZE
@@ -88,18 +87,10 @@ const Footer = () => {
                 <span className="block w-10 h-0.5 bg-[#f8991d] mt-2" />
               </h3>
               <ul className="space-y-2 text-sm">
-                {[
-                  "About Us",
-                  "Global Network",
-                  "Privacy Policy",
-                  "Cookies Policy",
-                  "Terms & Conditions",
-                  "FAQs",
-                ].map((item) => (
-                  <li key={item} className="hover:text-white cursor-pointer">
-                    {item}
-                  </li>
-                ))}
+                <li><Link to="/about" className="hover:text-white">About Us</Link></li>
+                <li><Link to="/global-network" className="hover:text-white">Global Network</Link></li>
+                <li><Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
+                <li><Link to="/cookies-policy" className="hover:text-white">Cookies Policy</Link></li>
               </ul>
             </div>
 
@@ -110,17 +101,9 @@ const Footer = () => {
                 <span className="block w-10 h-0.5 bg-[#f8991d] mt-2" />
               </h3>
               <ul className="space-y-2 text-sm">
-                {[
-                  "Contact Us",
-                  "Download Center",
-                  "Catalog & Brochures",
-                  "CSR",
-                  "E-Waste Management",
-                ].map((item) => (
-                  <li key={item} className="hover:text-white cursor-pointer">
-                    {item}
-                  </li>
-                ))}
+                <li><Link to="/contact" className="hover:text-white">Contact Us</Link></li>
+                <li><Link to="/downloads" className="hover:text-white">Download Center</Link></li>
+                <li><Link to="/catalogs" className="hover:text-white">Catalog & Brochures</Link></li>
               </ul>
             </div>
 
@@ -137,17 +120,18 @@ const Footer = () => {
                   "MSME Registered Company",
                   "GST Verified Business",
                 ].map((item) => (
-                  <span
+                  <div
                     key={item}
                     className="flex items-center gap-2
                                bg-neutral-800 px-3 py-2 rounded-lg"
                   >
                     <FaShieldAlt className="text-[#f8991d]" />
                     {item}
-                  </span>
+                  </div>
                 ))}
               </div>
             </div>
+
           </div>
         </div>
 
@@ -161,19 +145,12 @@ const Footer = () => {
             </p>
 
             <div className="flex gap-4">
-              {[FaFacebookF, FaYoutube, FaPinterestP, FaInstagram, FaLinkedinIn, FaTwitter].map(
-                (Icon, i) => (
-                  <span
-                    key={i}
-                    className="h-9 w-9 flex items-center justify-center
-                               rounded-full border border-neutral-700
-                               hover:border-[#f8991d] hover:text-[#f8991d]
-                               transition cursor-pointer"
-                  >
-                    <Icon size={14} />
-                  </span>
-                )
-              )}
+              <a href="https://www.facebook.com/sainiautomation" target="_blank" rel="noreferrer"><FaFacebookF /></a>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer"><FaYoutube /></a>
+              <a href="https://pinterest.com" target="_blank" rel="noreferrer"><FaPinterestP /></a>
+              <a href="https://www.instagram.com/widhinautomation/" target="_blank" rel="noreferrer"><FaInstagram /></a>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
+              <a href="https://twitter.com" target="_blank" rel="noreferrer"><FaTwitter /></a>
             </div>
           </div>
         </div>

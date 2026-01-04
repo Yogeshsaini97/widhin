@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CountUp from "react-countup";
+import auomated from "../../images/Automated_packeging_lines - Copy.png"
+import pharma from "../../images/Autmated_pharma.png"
+import texttile from "../../images/Texttile_automated.png"
 
 /* ---------------- DATA ---------------- */
 
@@ -11,8 +14,7 @@ const projects = [
     industry: "FMCG",
     slug: "automated-packaging-line",
     flagship: true,
-    image:
-      "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1400&q=80",
+    image:auomated,
     kpiValue: 30,
     kpiLabel: "Throughput Increase",
     scope: "PLC integration, conveyors, vision inspection",
@@ -25,8 +27,7 @@ const projects = [
     title: "Pharma Machine Integration",
     industry: "Pharmaceutical",
     slug: "pharma-machine-integration",
-    image:
-      "https://images.unsplash.com/photo-1581091012184-7f26c4a0c9d9?auto=format&fit=crop&w=1400&q=80",
+    image:pharma,
     kpiValue: 100,
     kpiLabel: "GMP Compliance",
     scope: "Servo drives, validation, safety PLC",
@@ -39,8 +40,7 @@ const projects = [
     title: "Textile Automation Upgrade",
     industry: "Textile",
     slug: "textile-automation-upgrade",
-    image:
-      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1400&q=80",
+    image:texttile,
     kpiValue: 25,
     kpiLabel: "Downtime Reduction",
     scope: "Retrofit PLC, SCADA, energy monitoring",

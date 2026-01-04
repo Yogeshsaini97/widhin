@@ -5,9 +5,9 @@ import { FaIndustry, FaCogs, FaTools, FaPlay } from "react-icons/fa";
 
 import VideoModal from "../Components/ServicesSection/VideoModal";
 
-import panelImage from "../images/panel.jfif";
-import machineImage from "../images/machine manufacturing.jfif";
-import automationImage from "../images/industrialautomation.png";
+import panelImage from "../images/Panel.png";
+import machineImage from "../images/Machine.png";
+import automationImage from "../images/Industrial.png";
 
 import panelVideo from "./Videos/panel.mp4";
 import machineVideo from "./Videos/machine.mp4";
