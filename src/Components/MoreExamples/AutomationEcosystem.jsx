@@ -5,27 +5,43 @@ import { useNavigate } from "react-router-dom";
 /* ---------------- DATA ---------------- */
 
 const ecosystem = {
-  PLC: [
+  PLC_VFD_HMI: [
     { name: "SIEMENS", link: "/capabilities/plc/siemens" },
-    { name: "ABB", link: "/capabilities/plc/abb" },
+    { name: "DELTA", link: "/capabilities/plc/delta" },
     { name: "SCHNEIDER ELECTRIC", link: "/capabilities/plc/schneider" },
-    { name: "ROCKWELL AUTOMATION", link: "/capabilities/plc/rockwell" },
     { name: "MITSUBISHI ELECTRIC", link: "/capabilities/plc/mitsubishi" },
-    { name: "OMRON", link: "/capabilities/plc/omron" },
   ],
-  Motion: [
+
+  Servo_Motion: [
     { name: "BOSCH REXROTH", link: "/capabilities/motion/bosch" },
     { name: "DELTA", link: "/capabilities/motion/delta" },
     { name: "YASKAWA", link: "/capabilities/motion/yaskawa" },
-    { name: "EMERSON", link: "/capabilities/motion/emerson" },
+    { name: "MITSUBISHI ELECTRIC", link: "/capabilities/plc/mitsubishi" },
   ],
+
   Robotics: [
-    { name: "FANUC", link: "/capabilities/robotics/fanuc" },
-    { name: "KEYENCE", link: "/capabilities/robotics/keyence" },
+    { name: "MITSUBISHI ELECTRIC", link: "/capabilities/plc/mitsubishi" },
     { name: "HONEYWELL", link: "/capabilities/robotics/honeywell" },
     { name: "L&T", link: "/capabilities/robotics/lnt" },
+    { name: "ABB", link: "/capabilities/robotics/abb" },
+  ],
+
+  SCADA_EMS: [
+    { name: "MITSUBISHI ELECTRIC", link: "/capabilities/plc/mitsubishi" },
+    { name: "DELTA", link: "/capabilities/motion/delta" },
+    { name: "SCHINDLER", link: "/capabilities/robotics/schindler" },
+    { name: "SIEMENS", link: "/capabilities/robotics/siemens" },
+    { name: "PROFACE", link: "/capabilities/robotics/proface" },
+  ],
+   MachineDesign: [
+    { name: "WIDHIN", link: "/capabilities/plc/widhin" },
+      { name: "WIDHIN", link: "/capabilities/plc/widhin" },
+        { name: "WIDHIN", link: "/capabilities/plc/widhin" },
+          { name: "WIDHIN", link: "/capabilities/plc/widhin" },
+            { name: "WIDHIN", link: "/capabilities/plc/widhin" }
   ],
 };
+
 
 const certifications = ["ISO 9001", "CE", "IEC"];
 
@@ -65,7 +81,8 @@ const AutomationEcosystem = () => {
 
             {/* CATEGORY LABEL */}
             <div className="mb-4 text-[11px] uppercase tracking-widest text-neutral-500">
-              {category}
+              {category.split("_").join(" / ")
+}
             </div>
 
             {/* CENTERED MARQUEE VIEWPORT */}

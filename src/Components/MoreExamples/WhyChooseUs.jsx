@@ -12,7 +12,7 @@ const points = [
   {
     icon: FaCogs,
     title: "In-House Engineering",
-    metric: "15+ Years",
+    metric: "12+ Years",
     desc: "End-to-end design, manufacturing, and testing under one roof.",
     badges: ["Custom", "OEM"],
   },
@@ -85,8 +85,7 @@ const WhyChooseUs = () => {
           </h2>
 
           <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-            Automation and machine manufacturing backed by experience,
-            compliance, and long-term support.
+          We deliver reliable automation and machine manufacturing solutions, combining deep engineering expertise, industry compliance, and dependable long-term support.
           </p>
 
           {/* Capability signal */}

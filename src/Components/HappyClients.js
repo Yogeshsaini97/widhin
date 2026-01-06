@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const stats = [
   {
-    number: 15,
+    number: 12,
     suffix: "+",
     label: "Years Experience",
     icon: FaIndustry,
@@ -19,15 +19,15 @@ const stats = [
     link: "/about",
   },
   {
-    number: 1200,
+    number: 700,
     suffix: "+",
-    label: "Machines Delivered",
+    label: "Projects Delivered",
     icon: FaProjectDiagram,
     tooltip: "Successfully commissioned worldwide",
     link: "/projects",
   },
   {
-    number: 20,
+    number: 500,
     suffix: "+",
     label: "Industries Served",
     icon: FaIndustry,

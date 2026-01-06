@@ -83,12 +83,11 @@ const Footer = () => {
             {/* ABOUT */}
             <div>
               <h3 className="text-white font-semibold text-lg mb-4">
-                About Widhin
+                Policies
                 <span className="block w-10 h-0.5 bg-[#f8991d] mt-2" />
               </h3>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="hover:text-white">About Us</Link></li>
-                <li><Link to="/global-network" className="hover:text-white">Global Network</Link></li>
+                {/* <li><Link to="/global-network" className="hover:text-white">Global Network</Link></li> */}
                 <li><Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
                 <li><Link to="/cookies-policy" className="hover:text-white">Cookies Policy</Link></li>
               </ul>
@@ -141,16 +140,14 @@ const Footer = () => {
                           flex flex-col md:flex-row
                           justify-between items-center gap-4">
             <p className="text-xs text-neutral-400">
-              © 2025 Widhin. All Rights Reserved.
+              © 2026 Widhin. All Rights Reserved.
             </p>
 
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/sainiautomation" target="_blank" rel="noreferrer"><FaFacebookF /></a>
+              <a href="https://www.facebook.com/widhinautomation" target="_blank" rel="noreferrer"><FaFacebookF /></a>
               <a href="https://youtube.com" target="_blank" rel="noreferrer"><FaYoutube /></a>
-              <a href="https://pinterest.com" target="_blank" rel="noreferrer"><FaPinterestP /></a>
               <a href="https://www.instagram.com/widhinautomation/" target="_blank" rel="noreferrer"><FaInstagram /></a>
               <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer"><FaTwitter /></a>
             </div>
           </div>
         </div>

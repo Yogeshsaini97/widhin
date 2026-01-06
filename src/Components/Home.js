@@ -29,13 +29,13 @@ export const Home = () => {
              <ServicesCards />
              <WhyChooseUs />
                <AutomationEcosystem />
-             <CertificationsStrip/>
+             {/* <CertificationsStrip/> */}
              
                <ProcessFlow/>
                 <Markets/>
            {/* <CapabilitiesStrip /> */}
 
-<ExperienceBox /> 
+{/* <ExperienceBox />  */}
 
        
         

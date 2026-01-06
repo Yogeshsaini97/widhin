@@ -28,11 +28,11 @@ const services = [
     industries: ["Pharma", "Manufacturing", "Energy"],
   },
   {
-    title: "Machine Manufacturing",
+    title: "Industrial Automation Machine Manufacturing",
     description:
-      "Precision-engineered industrial machines built for performance, scalability, and long-term reliability.",
+      "Advanced automation machines designed to maximize efficiency, support scalable production, and deliver consistent, long-term performance.",
     image: machineImage,
-    video: machineVideo,
+    video: automationVideo,
     icon: FaCogs,
     link: "/services/machine-manufacturing",
     badges: ["High Precision", "Custom Automation"],
@@ -41,7 +41,7 @@ const services = [
   {
     title: "Industrial Automation Spares",
     description:
-      "Certified automation spare parts ensuring minimal downtime and seamless system maintenance.",
+      "Reliable industrial automation spares and parts readily available to keep your systems running without interruption.",
     image: automationImage,
     video: automationVideo,
     icon: FaTools,

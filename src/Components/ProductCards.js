@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import mitsubishi1 from "../images/mitsubhishi3.jfif";
+import mitsubishi1 from "../images/mitubhishi_servo_meter.png";
 import mitsubishi2 from "../images/mitsubhishi4.jfif";
 
 /* ---------------- MOCK API ---------------- */
@@ -12,11 +12,11 @@ const fetchProducts = () =>
         {
           id: 1,
           image: mitsubishi1,
-          name: "Mitsubishi AC Drive",
+          name: "Mitsubishi Servo motor",
           brand: "Mitsubishi",
-          model: "P-200X",
+          model: "D700 Series",
           location: "Ludhiana, Punjab",
-          price: "₹213.23",
+          price: "On call",
           description:
             "Industrial-grade AC drive for reliable speed control.",
           specs: { power: "3 HP", phase: "3 Phase", area: "250 sq ft" },
@@ -26,21 +26,22 @@ const fetchProducts = () =>
           trending: true,
         },
         {
-          id: 2,
-          image: mitsubishi2,
-          name: "Panasonic AC Drive",
-          brand: "Delta",
-          model: "DX-88",
-          location: "Rohini, New Delhi",
-          price: "₹345.18",
-          description:
-            "Compact and efficient AC drive for automation systems.",
-          specs: { power: "5 HP", phase: "3 Phase", area: "450 sq ft" },
-          seller: "Yogesh Saini",
-          industries: ["Packaging", "Pharma"],
-          stock: "Limited",
-          trending: true,
-        },
+  id: 2,
+  image: mitsubishi2,
+  name: "Mitsubishi AC Drive",
+  brand: "Mitsubishi",
+  model: "A800 Series",
+  location: "Ludhiana, Punjab",
+  price: "On call",
+  description:
+    "Industrial-grade Mitsubishi AC drive designed for precise motor speed control and energy-efficient operation.",
+  specs: { power: "3 HP", phase: "3 Phase", area: "250 sq ft" },
+  seller: "Saini Enterprises",
+  industries: ["Textile", "FMCG"],
+  stock: "In Stock",
+  trending: true,
+}
+,
         {
           id: 3,
           image: mitsubishi1,
@@ -61,9 +62,9 @@ const fetchProducts = () =>
           image: mitsubishi1,
           name: "Mitsubishi AC Drive",
           brand: "Mitsubishi",
-          model: "P-200X",
+          model: "D700 Series",
           location: "Ludhiana, Punjab",
-          price: "₹213.23",
+          price: "On call",
           description:
             "Industrial-grade AC drive for reliable speed control.",
           specs: { power: "3 HP", phase: "3 Phase", area: "250 sq ft" },
@@ -145,7 +146,7 @@ const ProductCards = () => {
             Industrial Automation Products
           </h2>
           <p className="mt-3 text-neutral-600 text-sm">
-            High-demand automation components trusted by industries.
+          High-demand industrial automation components also available for purchase to meet your operational needs.
           </p>
         </div>
 
@@ -253,18 +254,7 @@ const ProductCards = () => {
                       {p.description}
                     </p>
 
-                    {/* SPECS */}
-                    <div className="mt-2 grid grid-cols-3 gap-1 text-[11px]">
-                      <span className="bg-neutral-100 px-1 py-0.5 rounded">
-                        {p.specs.power}
-                      </span>
-                      <span className="bg-neutral-100 px-1 py-0.5 rounded">
-                        {p.specs.phase}
-                      </span>
-                      <span className="bg-neutral-100 px-1 py-0.5 rounded">
-                        {p.specs.area}
-                      </span>
-                    </div>
+                  
 
                     <p className="mt-2 text-[11px] text-neutral-500">
                       Supplier: <strong>{p.seller}</strong>

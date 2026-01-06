@@ -58,8 +58,8 @@ const Markets = () => {
 
   {/* Subtitle */}
   <p className="mt-5 text-neutral-600">
-    Delivering reliable automation and machine solutions across
-    mission-critical industrial sectors.
+  We deliver reliable automation and machine solutions for industries where performance matters most.
+Our solutions help you improve productivity, reduce downtime, and run operations with confidence.
   </p>
 </div>
 

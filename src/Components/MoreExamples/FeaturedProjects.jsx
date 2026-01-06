@@ -2,52 +2,54 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CountUp from "react-countup";
-import auomated from "../../images/Automated_packeging_lines - Copy.png"
-import pharma from "../../images/Autmated_pharma.png"
+import auomated from "../../images/Automated_packeging_lines.png"
+import pharma from "../../images/FBD.png"
 import texttile from "../../images/Texttile_automated.png"
 
 /* ---------------- DATA ---------------- */
 
 const projects = [
+{
+  title: "Automated Biscuit Packaging Line",
+  industry: "FMCG",
+  slug: "automated-biscuit-packaging-line",
+  flagship: true,
+  image: auomated,
+  kpiValue: 30,
+  kpiLabel: "Throughput Increase",
+  scope: "PLC integration, automated conveyors, vision-based inspection, line synchronization",
+  duration: "2 Weeks",
+  chips: ["PLC • SCADA", "Food-Grade Automation", "OEM Integration", "ISO Compliant"],
+  description:
+    "End-to-end automation of a high-speed biscuit manufacturing and packaging line, delivering consistent quality and measurable throughput improvement."
+}
+,
+ {
+  title: "FBD Granulation Machine Automation Upgradation",
+  industry: "Pharmaceutical",
+  slug: "fbd-granulation-automation-upgradation",
+  image: pharma,
+  kpiValue: 100,
+  kpiLabel: "GMP Compliance",
+  scope: "PLC and IPC integration, control system upgradation, process interlocks, validation support",
+  duration: "6-8 Weeks",
+  chips: ["GMP Compliant", "PLC • IPC", "Process Automation", "Safety Interlocks"],
+  description:
+    "Automation upgradation of an FBD granulation machine using PLC and IPC, ensuring GMP compliance, improved process control, and reliable pharmaceutical operations."
+}
+,
   {
-    title: "Automated Packaging Line",
-    industry: "FMCG",
-    slug: "automated-packaging-line",
-    flagship: true,
-    image:auomated,
-    kpiValue: 30,
-    kpiLabel: "Throughput Increase",
-    scope: "PLC integration, conveyors, vision inspection",
-    duration: "14 Weeks",
-    chips: ["PLC • SCADA", "OEM Integration", "ISO Compliant"],
-    description:
-      "End-to-end automation of a high-speed packaging line with measurable throughput improvement.",
-  },
-  {
-    title: "Pharma Machine Integration",
-    industry: "Pharmaceutical",
-    slug: "pharma-machine-integration",
-    image:pharma,
-    kpiValue: 100,
-    kpiLabel: "GMP Compliance",
-    scope: "Servo drives, validation, safety PLC",
-    duration: "18 Weeks",
-    chips: ["GMP", "Safety PLC"],
-    description:
-      "GMP-compliant pharmaceutical automation with validation and safety systems.",
-  },
-  {
-    title: "Textile Automation Upgrade",
+    title: "Textile Automation Upgrade with Thread Twisting Machine",
     industry: "Textile",
     slug: "textile-automation-upgrade",
     image:texttile,
     kpiValue: 25,
     kpiLabel: "Downtime Reduction",
     scope: "Retrofit PLC, SCADA, energy monitoring",
-    duration: "10 Weeks",
-    chips: ["Retrofit", "Energy Monitoring"],
+    duration: "4-6 Weeks",
+    chips: ["Retrofit", "Thread Twisting Machine"],
     description:
-      "Legacy textile system modernization improving uptime and operational efficiency.",
+      "Modernization of a legacy thread twisting machine to significantly enhance uptime, energy efficiency, and production reliability through advanced automation.",
   },
 ];
 
