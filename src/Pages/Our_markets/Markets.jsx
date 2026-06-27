@@ -8,6 +8,11 @@ const Markets = () => {
   const cardsRef = useRef([]);
   const navigate = useNavigate();
 
+  /* Split data into 2 rows */
+  const midpoint = Math.ceil(marketsData.length / 2);
+  const firstRow = marketsData.slice(0, midpoint);
+  const secondRow = marketsData.slice(midpoint);
+
   /* GSAP entry animation */
   useEffect(() => {
     if (!cardsRef.current.length) return;
@@ -15,7 +20,7 @@ const Markets = () => {
     gsap.from(cardsRef.current, {
       y: 32,
       opacity: 0,
-      stagger: 0.1,
+      stagger: 0.08,
       duration: 0.7,
       ease: "power3.out",
       clearProps: "all",
@@ -26,118 +31,147 @@ const Markets = () => {
     <section className="w-full bg-white px-6 py-16">
       <div className="max-w-7xl mx-auto">
 
-       {/* HEADER */}
-<div className="max-w-3xl mx-auto mb-12 text-center">
-  {/* Eyebrow */}
-  <span className="text-[#f8991d] uppercase tracking-widest text-sm font-semibold">
-    Industries
-  </span>
+        {/* HEADER */}
+        <div className="max-w-3xl mx-auto mb-12 text-center">
+          <span className="text-[#f8991d] uppercase tracking-widest text-sm font-semibold">
+            Industries
+          </span>
 
-  {/* Title */}
-  <h2 className="mt-3 text-3xl md:text-4xl font-bold text-neutral-900">
-    Markets We Serve
-  </h2>
+          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-neutral-900">
+            Markets We Serve
+          </h2>
 
-  {/* Animated underline */}
-  <div className="relative mt-4 flex justify-center">
-    {/* Base thin line */}
-    <div className="h-[2px] w-24 bg-[#f8991d]/30 rounded-full" />
+          {/* Animated underline */}
+          <div className="relative mt-4 flex justify-center">
+            <div className="h-[2px] w-24 bg-[#f8991d]/30 rounded-full" />
+            <motion.div
+              className="absolute h-[2px] w-10 bg-[#f8991d] rounded-full"
+              initial={{ x: -40, opacity: 0 }}
+              whileInView={{ x: 40, opacity: 1 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+              viewport={{ once: true }}
+            />
+          </div>
 
-    {/* Moving accent */}
-    <motion.div
-      className="absolute h-[2px] w-10 bg-[#f8991d] rounded-full"
-      initial={{ x: -40, opacity: 0 }}
-      whileInView={{ x: 40, opacity: 1 }}
-      transition={{
-        duration: 1.2,
-        ease: "easeInOut",
-      }}
-      viewport={{ once: true }}
-    />
-  </div>
-
-  {/* Subtitle */}
-  <p className="mt-5 text-neutral-600">
-  We deliver reliable automation and machine solutions for industries where performance matters most.
-Our solutions help you improve productivity, reduce downtime, and run operations with confidence.
-  </p>
-</div>
-
-        {/* DESKTOP VIEW */}
-        <div className="hidden md:flex min-h-[360px] gap-3">
-          {marketsData.map((market, idx) => {
-            const Icon = market.icon;
-
-            return (
-              <div
-                key={market.id}
-                ref={(el) => (cardsRef.current[idx] = el)}
-                onClick={() => navigate(market.route)}
-                className="
-                  group relative flex-1 cursor-pointer overflow-hidden rounded-xl
-                  transition-[flex] duration-700 ease-in-out
-                  hover:flex-[3.5]
-                "
-              >
-                {/* IMAGE */}
-                <img
-                  src={market.image}
-                  alt={market.name}
-                  loading="lazy"
-                  className="
-                    absolute inset-0 h-full w-full object-cover
-                    transition-transform duration-700 ease-out
-                    group-hover:scale-[1.03]
-                  "
-                />
-
-                {/* INDUSTRIAL OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/10"></div>
-
-                {/* PROJECT COUNT */}
-                <div className="absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full
-                                bg-black/60 text-white border border-white/10">
-                  {market.projects}+ Projects
-                </div>
-
-                {/* CONTENT */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg
-                                    bg-[#f8991d]/15 text-[#f8991d]">
-                      <Icon className="w-5 h-5" />
-                    </div>
-
-                    <h3 className="text-white text-xl font-semibold tracking-tight">
-                      {market.name}
-                    </h3>
-                  </div>
-
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(market.route);
-                    }}
-                    className="
-                      inline-flex items-center gap-2
-                      text-[#f8991d] text-sm font-medium
-                      opacity-0 translate-y-3
-                      transition-all duration-300
-                      group-hover:opacity-100 group-hover:translate-y-0
-                    "
-                  >
-                    View Projects
-                    <span className="transition-transform group-hover:translate-x-1">
-                      →
-                    </span>
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+          <p className="mt-5 text-neutral-600">
+            We deliver reliable automation and machine solutions for industries
+            where performance matters most. Our solutions help you improve
+            productivity, reduce downtime, and run operations with confidence.
+          </p>
         </div>
 
-        {/* MOBILE VIEW */}
+        {/* ===================== */}
+        {/* DESKTOP – TWO ROWS */}
+        {/* ===================== */}
+        <div className="hidden md:flex flex-col gap-6">
+
+          {/* ROW 1 */}
+          <div className="flex min-h-[300px] gap-3">
+            {firstRow.map((market, idx) => {
+              const Icon = market.icon;
+
+              return (
+                <div
+                  key={market.id}
+                  ref={(el) => (cardsRef.current[idx] = el)}
+                  onClick={() => navigate(market.route)}
+                  className="
+                    group relative flex-1 cursor-pointer overflow-hidden rounded-xl
+                    transition-[flex] duration-700 ease-in-out
+                    hover:flex-[3]
+                  "
+                >
+                  <img
+                    src={market.image}
+                    alt={market.name}
+                    loading="lazy"
+                    className="
+                      absolute inset-0 h-full w-full object-cover
+                      transition-transform duration-700
+                      group-hover:scale-[1.03]
+                    "
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/10" />
+
+                  <div className="absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full
+                                  bg-black/60 text-white border border-white/10">
+                    {market.projects}+ Projects
+                  </div>
+
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg
+                                      bg-[#f8991d]/15 text-[#f8991d]">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-white text-lg font-semibold">
+                        {market.name}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* ROW 2 */}
+          <div className="flex min-h-[300px] gap-3">
+            {secondRow.map((market, idx) => {
+              const Icon = market.icon;
+
+              return (
+                <div
+                  key={market.id}
+                  ref={(el) =>
+                    (cardsRef.current[midpoint + idx] = el)
+                  }
+                  onClick={() => navigate(market.route)}
+                  className="
+                    group relative flex-1 cursor-pointer overflow-hidden rounded-xl
+                    transition-[flex] duration-700 ease-in-out
+                    hover:flex-[3]
+                  "
+                >
+                  <img
+                    src={market.image}
+                    alt={market.name}
+                    loading="lazy"
+                    className="
+                      absolute inset-0 h-full w-full object-cover
+                      transition-transform duration-700
+                      group-hover:scale-[1.03]
+                    "
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/10" />
+
+                  <div className="absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full
+                                  bg-black/60 text-white border border-white/10">
+                    {market.projects}+ Projects
+                  </div>
+
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg
+                                      bg-[#f8991d]/15 text-[#f8991d]">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-white text-lg font-semibold">
+                        {market.name}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+
+        {/* ===================== */}
+        {/* MOBILE – UNCHANGED */}
+        {/* ===================== */}
         <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
           {marketsData.map((market) => {
             const Icon = market.icon;
@@ -158,15 +192,14 @@ Our solutions help you improve productivity, reduce downtime, and run operations
                   className="absolute inset-0 h-full w-full object-cover"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
 
                 <div className="absolute bottom-4 left-4 right-4">
-                  <div className="flex items-center gap-3 mb-1">
+                  <div className="flex items-center gap-3">
                     <div className="flex h-9 w-9 items-center justify-center rounded-lg
                                     bg-[#f8991d]/15 text-[#f8991d]">
                       <Icon className="w-4 h-4" />
                     </div>
-
                     <h3 className="text-white text-lg font-semibold">
                       {market.name}
                     </h3>
